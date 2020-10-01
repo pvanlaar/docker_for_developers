@@ -1,0 +1,8 @@
+# Step 1: Go to the workspace
+cd workspace
+
+# Step 2: Build the cross-compilation container
+docker build -t build_for_arm -f docker/arm.Dockerfile .
+
+# Step 3: Cross compile for ARM64
+docker run --rm -v ${PWD}:/home/developer/workspace -w /home/developer/workspace build_for_arm ./build_release.bash

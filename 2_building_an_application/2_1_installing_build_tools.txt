@@ -1,0 +1,18 @@
+# Step 1: Navigate to the workspace in your terminal
+cd workspace
+
+# Step 2: Build the image
+# Don't forget the dot at the end 
+docker build -t build_container -f docker/build.Dockerfile .
+
+# Step 3: Test the image and show the CMake version
+docker run build_container cmake --version
+
+# Step 4: Build the image again using the cache
+[Repeat step 2]
+
+# Step 5: Build again without the cache
+docker build --no-cache -t build_container -f docker/build.Dockerfile .
+
+# Step 6: Build the file using docker-compose
+docker-compose -f docker/build.docker-compose.yml build

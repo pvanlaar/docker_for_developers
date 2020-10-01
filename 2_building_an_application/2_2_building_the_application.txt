@@ -1,0 +1,23 @@
+# Step 1: Go to the workspace in the repository
+cd workspace
+
+# Step 2: Run the container interactively
+docker run -it -v ${PWD}:/home/developer/workspace -w /home/developer/workspace build_container /bin/bash
+
+# Step 3: Compile the application for 
+./build_debug.bash
+
+# Step 4: Run the unit tests
+./run_unit_tests.bash
+
+# Step 5: Run the application 
+./run_debug.bash
+
+# Step 6: Remove all build artifacts
+rm -rf build
+
+# Step 7: Exit the container
+exit
+
+# Step 8: Run the image as a single command
+docker run --rm -v ${PWD}:/home/developer/workspace -w /home/developer/workspace build_container ./build_debug.bash

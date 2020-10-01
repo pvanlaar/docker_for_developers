@@ -1,0 +1,24 @@
+# Step 0: (Linux Only): Install qemu emulation
+sudo apt-get install qemu binfmt-support qemu-user-static
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+
+# Step 1: Show the hosts architecture
+    # Linux
+        arch && cat /etc/os-release
+    # Windows
+        $env:PROCESSOR_ARCHITECTURE
+
+# Step 2: Run the arm64 container interactively
+docker run --rm -it arm64v8/ubuntu ./build/release/fibonacci_exe /bin/bash
+
+# Step 3: Show the architecture inside the container
+arch && cat /etc/os-release
+
+# Step 4: exit the container
+exit
+
+# Step 5: Run the arm64 executable inside the container
+    # Linux: mount the aarch emulator
+        docker run --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -v ${PWD}:/home/developer/workspace -w /home/developer/workspace -t arm64v8/ubuntu ./build/release/fibonacci_exe
+    # Windows
+        docker run --rm -v ${PWD}:/home/developer/workspace -w /home/developer/workspace -t arm64v8/ubuntu ./build/release/fibonacci_exe

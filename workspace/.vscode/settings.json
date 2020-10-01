@@ -1,0 +1,7 @@
+{
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/building_software/include",
+        "${workspaceFolder}/building_software/build/_deps/gtest-src/googletest/include",
+        "${workspaceFolder}/building_software/build/_deps/gtest-src/googlemock/include"
+    ]
+}

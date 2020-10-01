@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  build_container:
+    image: build_container
+    build: 
+      context: .
+      dockerfile: build.Dockerfile
+      args:
+        developer_uid: 1000
+        developer_gid: 1000
+    volumes:
+      - ..:/home/developer/workspace:cached
+    command: tail -f /dev/null

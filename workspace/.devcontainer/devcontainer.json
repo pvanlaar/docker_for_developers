@@ -1,0 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.140.1/containers/docker-from-docker-compose
+{
+	"name": "Docker from Docker Compose",
+	"dockerComposeFile": "../docker/docker-compose.yml",
+	"service": "build_container",
+	"workspaceFolder": "/home/developer/workspace",
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-vscode.cpptools",
+		"ms-azuretools.vscode-docker",
+		"twxs.cmake",
+		"xaver.clang-format",
+		"matepek.vscode-catch2-test-adapter",
+		"hbenl.vscode-test-explorer"
+	],
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "developer"
+}

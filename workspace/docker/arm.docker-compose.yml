@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  build_for_arm_container:
+    image: build_for_arm
+    build: 
+      context: .
+      dockerfile: arm.Dockerfile
+    volumes:
+      - ..:/home/developer/workspace:cached
+    command: tail -f /dev/null

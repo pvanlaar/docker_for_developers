@@ -1,0 +1,24 @@
+# Step 1: pull the ubuntu image from dockerhub
+docker pull ubuntu:focal
+
+# Step 2: list the images locally available
+docker image list
+
+# Step 3: run the image interactively, thus keeping it ali
+docker run -it --name example_ubuntu ubuntu:focal /bin/bash
+
+# Step 4: show that you are running ubuntu
+arch && cat /etc/os-release
+
+##
+# Have a look around
+##
+
+# Step 5: exit the container 
+exit
+
+# Step 6: Show all local containers
+docker container list -a
+
+# Step 7: Remove the container
+docker container rm example_ubuntu

@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+    example_web_server:
+        image: "httpd:latest"
+        ports:
+         - "80:80"
+
+# command to run: 
+# docker-compose -f using_software/network_configuration.docker-compose.yml up​
