@@ -2,7 +2,7 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.140.1/containers/docker-from-docker-compose
 {
 	"name": "Docker from Docker Compose",
-	"dockerComposeFile": "../docker/docker-compose.yml",
+	"dockerComposeFile": "../docker/build.docker-compose.yml",
 	"service": "build_container",
 	"workspaceFolder": "/home/developer/workspace",
 	// Set *default* container specific settings.json values on container create.

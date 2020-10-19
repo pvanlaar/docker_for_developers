@@ -1,5 +1,5 @@
 # Step 1: Pull & run a container (detached)
-docker run -d -p  80:80--name example_web_server httpd
+docker run -d -p  80:80 --name example_web_server httpd
 
 # Step 2: Show the running containers
 docker container list
